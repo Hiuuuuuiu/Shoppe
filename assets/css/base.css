@@ -1,0 +1,249 @@
+:root{
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --primary-color:rgb(238, 77, 45);
+    --border-color:#dbdbdb;
+    --rating-star:#ee4d2d;
+
+    --header-height:130px;
+    --navbar_height:34px;
+    --header_search-height: calc(var(--header-height) - var(--navbar_height))
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid-full-width{
+    width: 100%;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.col-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.col-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+.col-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+@keyframes fadeIn{
+    from{
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+.modal_overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal_body{
+    background-color: var(--white-color);
+    margin: auto;
+    z-index: 1;
+    border-radius: 5px;
+    animation: uOa linear .3s;
+}
+.auth_container{
+    padding: 34px 37px;
+}
+.auth{
+    width: 550px;
+}
+.auth_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.auth_heading{
+    font-size: 2.4rem;
+    font-weight: 450;
+    color: var(--text-color);
+}
+.switch-btn{
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.auth_form{
+    margin-top: 32px;
+}
+.auth_input{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 16px;
+    padding: 0 12px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    outline: none;
+}
+.auth_input:focus{
+    border-color: #777;
+}
+.auth_aside{
+    margin-top: 7px;
+}
+.auth_policy{
+    font-size: 1.2rem;
+    line-height: 1.7;
+    text-align: center;
+    padding: 0 12px;
+}
+.auth_link{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.btn{
+    min-width: 124px;
+    min-height: 34px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    text-decoration: none;
+    padding: 0 12px;
+    font-size: 1.48rem;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn.btn-normal:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+.btn.btn-small{
+    min-height: 32px;
+    font-size: 1.3rem;
+}
+.btn.btn-primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.home_select{
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    min-width: 200px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.home_select:hover .home_select_list{
+    display: block;
+}
+.home_select_label{
+    font-size: 1.5rem;
+}
+.home_select_icon{
+    font-size: 1.4rem;
+    color: #666;
+    transform: translateY(-1px);
+}
+.home_select_list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 35px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    list-style: none;
+    padding: 8px 0;
+    display: none;
+    z-index:1;
+}
+.home_select_list::before{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    top: -5px;
+}
+.home_select_link{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    display: block;
+    padding: 8px 14px;
+}
+.home_select_link:hover{
+    color: var(--primary-color);
+}
+
+.disabled{
+    color: #ccc !important;
+    cursor: default !important;
+}
+
+/* Pagination */
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination_item{
+    margin: 0 12px;
+}
+.pagination_link{
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+}
+.btn-active{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
